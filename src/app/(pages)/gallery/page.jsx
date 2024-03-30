@@ -1,4 +1,8 @@
 
+export const metadata = {
+  title: "Gallery",
+};
+
 export default function GalleryPage() {
   return (
     <div className="py-10">

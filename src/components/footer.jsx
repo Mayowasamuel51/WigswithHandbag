@@ -5,7 +5,7 @@ const vollkorn = Vollkorn({ subsets: ["latin"]})
 const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]}, )
 
 
-const footer = () => {
+const Footer = () => {
   return (
     <footer className="bg-black text-white">
         <div className="md:px-20 px-4 md:py-10 py-5 flex md:items-center justify-between gap-20 md:flex-row flex-col">
@@ -41,4 +41,4 @@ const footer = () => {
   )
 }
 
-export default footer
+export default Footer
