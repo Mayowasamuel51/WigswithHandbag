@@ -3,14 +3,8 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { Parallax } from 'react-scroll-parallax';
 
-const Slider = ({left}) => {
-    console.log(left)
+const Slider = () => {
     return (
-        <Parallax
-            opacity={['1', '1', '0']}
-            scale={[1, 0.75]}
-            easing="easeInQuad"
-        >
             <Splide aria-label="My Favorite Images" options={{
                 type : 'loop',
                 perPage: 3,
@@ -52,7 +46,6 @@ const Slider = ({left}) => {
                     <div className="w-full aspect-square bg-black"></div>
                 </SplideSlide>
             </Splide>
-        </Parallax>
     )
 }
 

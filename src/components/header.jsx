@@ -56,12 +56,13 @@ const Header = () => {
     const [nav, setNav] = useState(false)
     const pathname = usePathname()
     return (
-        <header className="bg-white fixed w-full left-0 top-0 flex items-center justify-between z-[999999999]">
-            <div className=""><Link href="/"><Image src={LOGO} width={80} height={80} alt="LOGO"/></Link></div>
+        <header className="md:px-20 px-4 bg-white fixed w-screen left-0 top-0 flex items-center justify-between z-[999999999]">
+            <div className="lg:block hidden"><Link href="/"><Image src={LOGO} width={80} height={80} alt="LOGO"/></Link></div>
+            <div className="lg:hidden block"><Link href="/"><Image src={LOGO} width={40} height={40} alt="LOGO"/></Link></div>
             <nav className="lg:block hidden">
                 <Links />
             </nav>
-            <div className="flex items-center gap-4 md:gap-10">
+            <div className="lg:flex hidden items-center gap-4 md:gap-10">
                 <div className="relative">
                     <input className="pl-10 border-2 border-black h-12 md:h-14" type="text" name="" id="" placeholder="Search" />
                     <IoMdSearch className="absolute left-5 top-1/2 -translate-y-1/2" size={20} />

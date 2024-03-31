@@ -23,18 +23,18 @@ export const metadata ={
 const Landing = () => {
   return (
     <>
-      <section className="md:py-0 py-32 flex items-center md:flex-row flex-col justify-between gap-16 min-h-screen">
-        <div className="">
+      <section className="md:py-0 py-40 flex items-center md:flex-row flex-col justify-between gap-16 min-h-screen">
+        <div className="lg:flex[2]">
           <h1 className="font-bold text-3xl md:text-6xl">Welcome To EvaTouch Beauty</h1>
-          <p className="text-2xl my-4 w-[450px]">Your one-stop shop for exquisite hair & make-up products</p>
+          <p className="text-2xl my-4 lg:w-[450px]">Your one-stop shop for exquisite hair & make-up products</p>
           <div className="text-xl flex items-center gap-4 font-bold">
             <button className="px-5 py-4 bg-black text-white">SHOP NOW</button>
             <button className="px-5 py-4 bg-transparent text-black border-2 border-black">BOOK APPOINTMENT</button>
           </div>
         </div>
-        <div className="border-2 border-black bg-[#fddd6b]">
-          <Image style={{width: "auto"}} src={landingImg} width={265} height={213} alt="Landing image" className="md:block hidden bg-transparent" />
-          <Image style={{width: "auto"}} src={landingImg} width={1000} height={1000} alt="Landing image" className="md:hidden block" />
+        <div className="w-fit lg:flex-1 border-2 border-black bg-[#fddd6b]">
+          <Image src={landingImg} width={1000} height={1000} alt="Landing image" className="lg:block hidden bg-transparent" />
+          <Image src={landingImg} width={1000} height={1000} alt="Landing image" className="lg:hidden block" />
           <div className="p-2">
             <p>Bella - Preorder</p>
             <p>Fron $320.00</p>
@@ -57,7 +57,6 @@ const Landing = () => {
         <Slider />
       </section>
 
-
       <section className="md:my-32">
         <div className="relative flex justify-between my-4">
           <div>
@@ -74,7 +73,7 @@ const Landing = () => {
           </div>
         </div>
 
-        <Slider left={true} />
+        <Slider />
       </section>
 
     </>
