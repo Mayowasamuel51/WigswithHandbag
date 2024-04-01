@@ -14,7 +14,7 @@ const Slider = () => {
                 speed: 2000,
                 pauseOnHover: true,
                 arrows: false,
-                pagination: true,
+                pagination: false,
                 gap: "40px",
                 drag : 'free',
                     snap : true,

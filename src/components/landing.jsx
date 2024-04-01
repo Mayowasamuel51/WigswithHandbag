@@ -1,4 +1,3 @@
-
 import Options from "./options";
 import { Vollkorn, Poppins } from "next/font/google";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
@@ -26,10 +25,10 @@ const Landing = () => {
       <section className="md:py-0 py-40 flex items-center md:flex-row flex-col justify-between gap-16 min-h-screen">
         <div className="lg:flex[2]">
           <h1 className="font-bold text-3xl md:text-6xl">Welcome To EvaTouch Beauty</h1>
-          <p className="text-2xl my-4 lg:w-[450px]">Your one-stop shop for exquisite hair & make-up products</p>
-          <div className="text-xl flex items-center gap-4 font-bold">
-            <button className="px-5 py-4 bg-black text-white">SHOP NOW</button>
-            <button className="px-5 py-4 bg-transparent text-black border-2 border-black">BOOK APPOINTMENT</button>
+          <p className="text-lg md:text-2xl my-4 lg:w-[450px]">Your one-stop shop for exquisite hair & make-up products</p>
+          <div className="text-base md:text-xl flex items-center gap-3 md:gap-4 font-bold">
+            <button className="md:px-5 px-2 py-3 md:py-4 bg-black text-white">SHOP NOW</button>
+            <button className="md:px-5 px-2 py-3 md:py-4 bg-transparent text-black border-2 border-black">BOOK APPOINTMENT</button>
           </div>
         </div>
         <div className="w-fit lg:flex-1 border-2 border-black bg-[#fddd6b]">
@@ -45,10 +44,10 @@ const Landing = () => {
 
       <Options />
 
-      <section className="md:my-32">
+      <section className="md:my-32 my-10">
         <div className="relative flex justify-between my-4">
           <div>
-            <h1 className={`${poppins.className} font-bold text-lg md:text-4xl`}>New Arrivals</h1>
+            <h1 className={`${poppins.className} font-bold text-2xl md:text-4xl`}>New Arrivals</h1>
             <p className={`${vollkorn.className} text-base md:text-lg`}>Shop our range of products and embrace your unique radiance</p>
           </div>
           <SlideController />
@@ -57,20 +56,13 @@ const Landing = () => {
         <Slider />
       </section>
 
-      <section className="md:my-32">
+      <section className="md:my-32 my-10">
         <div className="relative flex justify-between my-4">
           <div>
-            <h1 className={`${poppins.className} font-bold text-lg md:text-4xl`}>Best Sellers</h1>
+            <h1 className={`${poppins.className} font-bold text-2xl md:text-4xl`}>Best Sellers</h1>
             <p className={`${vollkorn.className} text-base md:text-lg`}>Shop our range of products and embrace your unique radiance</p>
           </div>
-          <div className="flex items-center gap-5">
-            <div className="flex justify-center items-center w-10 aspect-square rounded-full bg-black">
-              <FaArrowRightLong color="white" />
-            </div>
-            <div className="flex justify-center items-center w-10 aspect-square rounded-full bg-black">
-              <FaArrowLeftLong color="white" />
-            </div>
-          </div>
+          <SlideController />
         </div>
 
         <Slider />
