@@ -54,7 +54,7 @@ const Landing = () => {
             <h1 className={`${poppins.className} font-bold text-2xl md:text-4xl`}>New Arrivals</h1>
             <p className={`${vollkorn.className} text-base md:text-lg`}>Shop our range of products and embrace your unique radiance</p>
           </div>
-          <SlideController />
+          {/* <SlideController /> */}
         </div>
 
         <Slider />
@@ -66,7 +66,7 @@ const Landing = () => {
             <h1 className={`${poppins.className} font-bold text-2xl md:text-4xl`}>Best Sellers</h1>
             <p className={`${vollkorn.className} text-base md:text-lg`}>Shop our range of products and embrace your unique radiance</p>
           </div>
-          <SlideController />
+          {/* <SlideController /> */}
         </div>
 
         <Slider 
@@ -74,6 +74,7 @@ const Landing = () => {
         best2 ={best_two}
         best3 ={best_three}
         best4={best_four}
+        rtl={true}
          />
       </section>
 

@@ -12,7 +12,20 @@ import { usePathname } from "next/navigation";
 import LOGO from "../app/images/eva.png"
 import Image from "next/image";
 
-const divVariant =  {
+
+import { Button } from "@/components/ui/button"
+import {
+    Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
+} from "@/components/ui/drawer"
+
+const divVariant = {
     initial: {
         opacity: 0,
         scale: 0,
@@ -55,19 +68,19 @@ const liVariant = {
 const Header = () => {
     const [nav, setNav] = useState(false)
     const pathname = usePathname()
-    const [subNav , setSubNav] = useState(false)
-    const [subNav2 , setSubNav2] = useState(false)
+    const [subNav, setSubNav] = useState(false)
+    const [subNav2, setSubNav2] = useState(false)
 
-    const openSubNav = ()=> {
+    const openSubNav = () => {
         setSubNav(prev => !prev)
     }
-    const openSubNav2 = ()=> {
+    const openSubNav2 = () => {
         setSubNav2(prev => !prev)
     }
     return (
-        <header className="md:px-20 px-4 bg-white fixed w-full left-0 top-0 flex items-center justify-between z-[999999999]">
-            <div className="lg:block hidden bg-white"><Link href="/"><Image src={LOGO} width={80} height={80} alt="LOGO"/></Link></div>
-            <div className="lg:hidden block"><Link href="/"><Image src={LOGO} width={40} height={40} alt="LOGO"/></Link></div>
+        <header className="bg-opacity-80 md:px-20 px-4 bg-white fixed w-full left-0 top-0 flex items-center justify-between z-[999999999]">
+            <div className="lg:block hidden"><Link href="/"><Image src={LOGO} width={80} height={80} alt="LOGO" /></Link></div>
+            <div className="lg:hidden block"><Link href="/"><Image src={LOGO} width={40} height={40} alt="LOGO" /></Link></div>
             <nav className="lg:block hidden">
                 <Links />
             </nav>
@@ -75,32 +88,50 @@ const Header = () => {
                 <div className="relative">
                     <input className="pl-10 border-2 border-black h-12 md:h-14" type="text" name="" id="" placeholder="Search" />
                     <IoMdSearch className="absolute left-5 top-1/2 -translate-y-1/2" size={20} />
-                </div>
-                <MdOutlineShoppingBag size={20} />
+                </div>    
+                <Drawer>
+                    <DrawerTrigger>
+                        <MdOutlineShoppingBag size={20} />
+                    </DrawerTrigger>
+                    <DrawerContent>
+                        <DrawerHeader>
+                            <div className="mx-auto text-center">
+                                <DrawerTitle>No Item in Your Cart Now!!</DrawerTitle>
+                                <DrawerDescription>Would you like to go through our products?.</DrawerDescription>
+                            </div>
+                        </DrawerHeader>
+                        <DrawerFooter className="mx-auto">
+                            <Button className="">Yes</Button>
+                            <DrawerClose>
+                                <Button variant="outline" className="" >Cancel</Button>
+                            </DrawerClose>
+                        </DrawerFooter>
+                    </DrawerContent>
+                </Drawer>
                 <FaUser size={20} />
             </div>
             <motion.div className={`${nav ? "static" : "relative"} cursor-pointer bg-black p-2 rounded-md lg:hidden block`}>
-                {nav ? 
-                <div className="z-[9999999] text-xl md:text-2xl relative border-2 border-white" onClick={()=> setNav(prev => !prev)}>
-                    <FaXmark color="white" size={20} />
-                </div>
-                :
-                <div className="z-[9999999] text-xl md:text-2xl relative" onClick={()=> setNav(prev => !prev)}>
-                    <FaBars color="white" size={20} />
-                </div>
+                {nav ?
+                    <div className="z-[9999999] text-xl md:text-2xl relative border-2 border-white" onClick={() => setNav(prev => !prev)}>
+                        <FaXmark color="white" size={20} />
+                    </div>
+                    :
+                    <div className="z-[9999999] text-xl md:text-2xl relative" onClick={() => setNav(prev => !prev)}>
+                        <FaBars color="white" size={20} />
+                    </div>
                 }
                 <motion.div variants={divVariant} initial="initial" animate={nav ? "final" : "initial"} className={`fixed ${nav ? "" : ""} inset-0 bg-black text-white origin-top-right duration-300`}>
                     <motion.ul variants={ulVariant} className="font-bold md:font-semibold p-4 md:text-xl leading-10">
-                        <motion.li onClick={()=> openSubNav()} variants={liVariant}><span className="px-3 flex items-center gap-1">Shop<FaChevronDown /></span>
-                        <ul className={`flex flex-col px-4 ${subNav ? "h-[84px]" : "h-0"} transition-all duration-300 overflow-hidden`}>
-                            <Link href="/wig">Wig</Link>
-                            <Link href="/bundles">Bundle</Link>
-                        </ul>
+                        <motion.li onClick={() => openSubNav()} variants={liVariant}><span className="px-3 flex items-center gap-1">Shop<FaChevronDown /></span>
+                            <ul className={`flex flex-col px-4 ${subNav ? "h-[84px]" : "h-0"} transition-all duration-300 overflow-hidden`}>
+                                <Link href="/wig">Wig</Link>
+                                <Link href="/bundles">Bundle</Link>
+                            </ul>
                         </motion.li>
-                        <motion.li onClick={()=> openSubNav2()} variants={liVariant}><span className="px-3 flex items-center gap-1">Our Services<FaChevronDown /></span>
-                        <ul className={`px-4 ${subNav2 ? "h-[44px]" : "h-0"} transition-all duration-300 overflow-hidden`}>
-                            <Link href="/makeup">MakeUp</Link>
-                        </ul>
+                        <motion.li onClick={() => openSubNav2()} variants={liVariant}><span className="px-3 flex items-center gap-1">Our Services<FaChevronDown /></span>
+                            <ul className={`px-4 ${subNav2 ? "h-[44px]" : "h-0"} transition-all duration-300 overflow-hidden`}>
+                                <Link href="/makeup">MakeUp</Link>
+                            </ul>
                         </motion.li>
                         <motion.li variants={liVariant}><Link className={`${pathname === "/gallery" && "nav-others"} nav-active px-3 py-3`} href="/gallery">Gallery</Link></motion.li>
                         <motion.li variants={liVariant}><Link className={`${pathname === "/about" && "nav-others"} nav-active px-3 py-3`} href="/about">About Us</Link></motion.li>

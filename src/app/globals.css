@@ -4,139 +4,226 @@
 @tailwind utilities;
 
 * {
-    font-family: "Kumbh Sans", sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* filter: blur(50px); */
+  z-index: -1;
 }
 
 
 .nav-active {
-    position: relative;
+  position: relative;
 }
 
 .nav-active:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    border-radius: 2px;
-    background-color: black;
-    transform-origin: left;
-    transition-duration: 300ms;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: black;
+  transform-origin: left;
+  transition-duration: 300ms;
 }
 
 .nav-others:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: black;
-    transform-origin: left;
-    transition-duration: 300ms;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  transform-origin: left;
+  transition-duration: 300ms;
 }
 
 .nav-active:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 
 /* LOADER CSS */
 
 .spinner {
-    position: absolute;
-    width: 9px;
-    height: 9px;
+  position: absolute;
+  width: 9px;
+  height: 9px;
 }
 
 .spinner div {
-    position: absolute;
-    width: 50%;
-    height: 150%;
-    background: #000000;
-    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
-    animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
+  position: absolute;
+  width: 50%;
+  height: 150%;
+  background: #000000;
+  transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+  animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
 }
 
 .spinner div:nth-child(1) {
-    --delay: 0.1;
-    --rotation: 36;
-    --translation: 150;
+  --delay: 0.1;
+  --rotation: 36;
+  --translation: 150;
 }
 
 .spinner div:nth-child(2) {
-    --delay: 0.2;
-    --rotation: 72;
-    --translation: 150;
+  --delay: 0.2;
+  --rotation: 72;
+  --translation: 150;
 }
 
 .spinner div:nth-child(3) {
-    --delay: 0.3;
-    --rotation: 108;
-    --translation: 150;
+  --delay: 0.3;
+  --rotation: 108;
+  --translation: 150;
 }
 
 .spinner div:nth-child(4) {
-    --delay: 0.4;
-    --rotation: 144;
-    --translation: 150;
+  --delay: 0.4;
+  --rotation: 144;
+  --translation: 150;
 }
 
 .spinner div:nth-child(5) {
-    --delay: 0.5;
-    --rotation: 180;
-    --translation: 150;
+  --delay: 0.5;
+  --rotation: 180;
+  --translation: 150;
 }
 
 .spinner div:nth-child(6) {
-    --delay: 0.6;
-    --rotation: 216;
-    --translation: 150;
+  --delay: 0.6;
+  --rotation: 216;
+  --translation: 150;
 }
 
 .spinner div:nth-child(7) {
-    --delay: 0.7;
-    --rotation: 252;
-    --translation: 150;
+  --delay: 0.7;
+  --rotation: 252;
+  --translation: 150;
 }
 
 .spinner div:nth-child(8) {
-    --delay: 0.8;
-    --rotation: 288;
-    --translation: 150;
+  --delay: 0.8;
+  --rotation: 288;
+  --translation: 150;
 }
 
 .spinner div:nth-child(9) {
-    --delay: 0.9;
-    --rotation: 324;
-    --translation: 150;
+  --delay: 0.9;
+  --rotation: 324;
+  --translation: 150;
 }
 
 .spinner div:nth-child(10) {
-    --delay: 1;
-    --rotation: 360;
-    --translation: 150;
+  --delay: 1;
+  --rotation: 360;
+  --translation: 150;
 }
 
 @keyframes spinner-fzua35 {
 
-    0%,
-    10%,
-    20%,
-    30%,
-    50%,
-    60%,
-    70%,
-    80%,
-    90%,
-    100% {
-        transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
-    }
+  0%,
+  10%,
+  20%,
+  30%,
+  50%,
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+      transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+  }
 
-    50% {
-        transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
-    }
+  50% {
+      transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
+  }
 }
 
 /* LOADER CSS */
+
+button.splide__arrow {
+  /* border: 2px solid red;
+  background-color: black;
+  color: white; */
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

@@ -3,18 +3,21 @@ import "./globals.css";
 
 const Loading = () => {
     return (
-        <div class="spinner">
-            <div></div>   
-            <div></div>    
-            <div></div>    
-            <div></div>    
-            <div></div>    
-            <div></div>    
-            <div></div>    
-            <div></div>    
-            <div></div>    
-            <div></div>    
+        <div className='min-h-screen grid place-items-center'>
+            <div class="spinner">
+                <div></div>   
+                <div></div>    
+                <div></div>    
+                <div></div>    
+                <div></div>    
+                <div></div>    
+                <div></div>    
+                <div></div>    
+                <div></div>    
+                <div></div>    
+            </div>
         </div>
+        
     )
 }
 

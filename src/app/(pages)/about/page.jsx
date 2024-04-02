@@ -16,10 +16,10 @@ const AboutUs = () => {
     <section className=''>
         <div className='flex items-center lg:flex-row flex-col gap-10 md:gap-20 min-h-screen'>
             <div className="">
-                <Image src={about_one} width={1000} height={1000} alt='about-img' />
+                <Image placeholder='blur' src={about_one} width={1000} height={1000} alt='about-img' />
             </div>
             <div className="mt-36">
-                <Image src={about_two} width={1000} height={1000} alt='about-img' />
+                <Image placeholder='blur' src={about_two} width={1000} height={1000} alt='about-img' />
             </div>
         </div>
 

@@ -93,13 +93,13 @@ const Options = () => {
                             >
                                 <motion.section ref={ref} variants={containerVariant} initial="initial" animate={isInView ? "animate" : "initial"} className="flex flex-wrap md:flex-row flex-col gap-10 items-center justify-between">
                                     <motion.div variants={divChildVariant} className="flex-1 w-fit">
-                                        <Image src={glam_one} width={1000} height={1000} alt="glam-image-one" />
+                                        <Image placeholder="blur" src={glam_one} width={1000} height={1000} alt="glam-image-one" />
                                     </motion.div>
                                     <motion.div variants={divChildVariant} className="flex-1 w-fit">
-                                        <Image src={glam_two} width={1000} height={1000} alt="glam-image-two" />
+                                        <Image placeholder="blur" src={glam_two} width={1000} height={1000} alt="glam-image-two" />
                                     </motion.div>
                                     <motion.div variants={divChildVariant} className="flex-1 w-fit">
-                                        <Image src={glam_three} width={1000} height={1000} alt="glam-image-three" />
+                                        <Image placeholder="blur" src={glam_three} width={1000} height={1000} alt="glam-image-three" />
                                     </motion.div>
                                 </motion.section>
                             </Parallax>
@@ -117,13 +117,13 @@ const Options = () => {
                             >
                                 <motion.section ref={ref} variants={containerVariant} initial="initial" animate={isInView ? "animate" : "initial"} className="flex flex-wrap md:flex-row flex-col gap-10 items-center justify-between">
                                 <motion.div variants={divChildVariant} className="flex-1 w-fit">
-                                    <Image src={wed_one} width={1000} height={1000} alt="wedding-image-one" />
+                                    <Image placeholder="blur" src={wed_one} width={1000} height={1000} alt="wedding-image-one" />
                                 </motion.div>
                                 <motion.div variants={divChildVariant} className="flex-1 w-fit">
-                                    <Image src={wed_two} width={1000} height={1000} alt="wedding-image-two" />
+                                    <Image placeholder="blur" src={wed_two} width={1000} height={1000} alt="wedding-image-two" />
                                 </motion.div>
                                 <motion.div variants={divChildVariant} className="flex-1 w-fit">
-                                    <Image src={wed_three} width={1000} height={1000} alt="wedding-image-three" />
+                                    <Image placeholder="blur" src={wed_three} width={1000} height={1000} alt="wedding-image-three" />
                                 </motion.div>
                                 </motion.section>
                             </Parallax>

@@ -29,58 +29,58 @@ export default function GalleryPage() {
       <h1 className="my-4 text-center font-bold text-xl md:text-3xl">Gallery</h1>
       <section className="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div className="w-full aspect-square">
-          <Image src={gallery_one} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_one} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_two} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_two} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_three} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_three} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_four} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_four} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_five} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_five} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_six} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_six} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_seven} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_seven} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_eight} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_eight} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_nine} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_nine} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_ten} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_ten} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_eleven} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_eleven} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_twelve} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_twelve} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_thirteen} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_thirteen} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_fourteen} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_fourteen} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_fiften} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_fiften} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_sixteen} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_sixteen} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_seventeen} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_seventeen} width={1000} height={1000} alt="gallery" />
         </div>
         <div className="w-full aspect-square">
-          <Image src={gallery_eight} width={1000} height={1000} alt="gallery" />
+          <Image placeholder='blur' src={gallery_eight} width={1000} height={1000} alt="gallery" />
         </div>
       </section>
     </div>
