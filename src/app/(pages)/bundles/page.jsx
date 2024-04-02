@@ -14,42 +14,42 @@ const page = () => {
         <div className="">
             <h1 className="my-4 text-center font-bold text-xl md:text-3xl">Bundles</h1>
             <section className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div className="w-full aspect-square">
+                <div className="">
                     <Image src={bundle_one} width={1000} height={1000} alt='bundles' />
                     <div className='py-2'>
                         <h2 className='font-semibold'>Raw Indian Bundles  -Wavy</h2>
                         <p className='font-bold'>$75.00</p>
                     </div>
                 </div>
-                <div className="w-full aspect-square">
+                <div className="">
                     <Image src={bundle_two} width={1000} height={1000} alt='bundles' />
                     <div className='py-2'>
                         <h2 className='font-semibold'>Raw Indian Bundles  -Wavy</h2>
                         <p className='font-bold'>$70.00</p>
                     </div>
                 </div>
-                <div className="w-full aspect-square">
+                <div className="">
                     <Image src={bundle_three} width={1000} height={1000} alt='bundles' />
                     <div className='py-2'>
                         <h2 className='font-semibold'>Raw Indian Bundles  -Wavy</h2>
                         <p className='font-bold'>$65.00</p>
                     </div>
                 </div>
-                <div className="w-full aspect-square">
+                <div className="">
                     <Image src={bundle_four} width={1000} height={1000} alt='bundles' />
                     <div className='py-2'>
                         <h2 className='font-semibold'>Raw Indian Bundles  -Curly</h2>
                         <p className='font-bold'>$105.00</p>
                     </div>
                 </div>
-                <div className="w-full aspect-square">
+                <div className="">
                     <Image src={bundle_five} width={1000} height={1000} alt='bundles' />
                     <div className='py-2'>
                         <h2 className='font-semibold'>Raw Indian Bundles  -Curly</h2>
                         <p className='font-bold'>$85.00</p>
                     </div>
                 </div>
-                <div className="w-full aspect-square">
+                <div className="">
                     <Image src={bundle_six} width={1000} height={1000} alt='bundles' />
                     <div className='py-2'>
                         <h2 className='font-semibold'>Raw Indian Bundles  -Curly</h2>
