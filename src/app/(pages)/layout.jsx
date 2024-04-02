@@ -1,18 +1,22 @@
 import "../globals.css"
-import { Vollkorn } from "next/font/google";
+import { Vollkorn, Poppins } from "next/font/google";
+
+const vollkorn = Vollkorn({ subsets: ["latin"]})
+const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800"]}, )
 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 
-const vollkorn = Vollkorn({ subsets: ["latin"] })
 export default function PageLayout({ children }) {
 
     return (
         <>
-            <div className="md:px-20 px-4">
+            <div className={`${poppins.className} md:px-20 px-4`}>
                 <Header />
-                {children}
+                <div className="md:py-32 py-20">
+                    {children}
+                </div>
             </div>
             <Footer />
         </>

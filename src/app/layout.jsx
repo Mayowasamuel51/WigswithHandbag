@@ -14,7 +14,7 @@ export default function Layout({ children }) {
   return (
     <html lang="en">
       <head>
-      <link rel="icon" href="icon.jpg" type="jpg" sizes="any" />
+      <link rel="icon" href="icon.jpeg" type="jpeg" sizes="any" />
       </head>
       <body className={vollkorn.className}>
         <div className="">

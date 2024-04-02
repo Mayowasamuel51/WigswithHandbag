@@ -65,8 +65,8 @@ const Header = () => {
         setSubNav2(prev => !prev)
     }
     return (
-        <header className="md:px-20 px-4 bg-white fixed w-screen left-0 top-0 flex items-center justify-between z-[999999999]">
-            <div className="lg:block hidden"><Link href="/"><Image src={LOGO} width={80} height={80} alt="LOGO"/></Link></div>
+        <header className="md:px-20 px-4 bg-white fixed w-full left-0 top-0 flex items-center justify-between z-[999999999]">
+            <div className="lg:block hidden bg-white"><Link href="/"><Image src={LOGO} width={80} height={80} alt="LOGO"/></Link></div>
             <div className="lg:hidden block"><Link href="/"><Image src={LOGO} width={40} height={40} alt="LOGO"/></Link></div>
             <nav className="lg:block hidden">
                 <Links />

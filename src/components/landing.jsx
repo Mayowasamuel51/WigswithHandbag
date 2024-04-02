@@ -4,13 +4,17 @@ import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 import LandingParallax from "./landingParallax";
 import Slider from "./slider";
 import SlideController from "./slideController";
-// import { Parallax } from 'react-scroll-parallax';
+
+import best_one from "../app/images/best1.png"
+import best_two from "../app/images/best2.png"
+import best_three from "../app/images/best3.png"
+import best_four from "../app/images/best4.png"
 
 const vollkorn = Vollkorn({ subsets: ["latin"]})
 const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800"]}, )
 
 import Image from 'next/image'
-import landingImg from "../app/images/landing-img.jpg"
+import landingImg from "../app/images/landing-img.png"
 
 export const metadata ={
   title: "EvaTouch HomePage",
@@ -22,8 +26,8 @@ export const metadata ={
 const Landing = () => {
   return (
     <>
-      <section className="md:py-0 py-40 flex items-center md:flex-row flex-col justify-between gap-16 min-h-screen">
-        <div className="lg:flex[2]">
+      <section className="flex items-center md:flex-row flex-col justify-between gap-16 min-h-screen py-32 md:py-10 md:my-10">
+        <div className="">
           <h1 className="font-bold text-3xl md:text-6xl">Welcome To EvaTouch Beauty</h1>
           <p className="text-lg md:text-2xl my-4 lg:w-[450px]">Your one-stop shop for exquisite hair & make-up products</p>
           <div className="text-base md:text-xl flex items-center gap-3 md:gap-4 font-bold">
@@ -34,7 +38,7 @@ const Landing = () => {
         <div className="w-fit lg:flex-1 border-2 border-black bg-[#fddd6b]">
           <Image src={landingImg} width={1000} height={1000} alt="Landing image" className="lg:block hidden bg-transparent" />
           <Image src={landingImg} width={1000} height={1000} alt="Landing image" className="lg:hidden block" />
-          <div className="p-2">
+          <div className="p-2 bg-white">
             <p>Bella - Preorder</p>
             <p>Fron $320.00</p>
           </div>
@@ -65,7 +69,12 @@ const Landing = () => {
           <SlideController />
         </div>
 
-        <Slider />
+        <Slider 
+        best1={best_one}
+        best2 ={best_two}
+        best3 ={best_three}
+        best4={best_four}
+         />
       </section>
 
     </>

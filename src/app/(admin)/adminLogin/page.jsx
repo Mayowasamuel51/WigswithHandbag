@@ -1,11 +1,6 @@
 import React from 'react'
+import Link from 'next/link'
 import { FaXmark } from "react-icons/fa6";
-import Link from 'next/link';
-import Image from 'next/image';
-
-export const metadata = {
-    title: "Login",
-};
 
 const page = () => {
     return (
@@ -20,7 +15,7 @@ const page = () => {
                             <FaXmark size={30} />
                         </Link>
                     </div>
-                    <p className="font-bold">Welcome Back!</p>
+                    <p className="font-bold">Welcome Admin!</p>
                     <p className="text-sm md:text-base text-slate-700 font-medium">Enter Your details to continue</p>
                     <form>
                         <div className="my-4">

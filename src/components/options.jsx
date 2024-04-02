@@ -3,6 +3,14 @@ import { useRef } from "react";
 import { Vollkorn, Poppins } from "next/font/google";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Parallax } from 'react-scroll-parallax';
+import Image from "next/image";
+import wed_one from "../app/images/wed1.png"
+import wed_two from "../app/images/wed2.png"
+import wed_three from "../app/images/wed3.png"
+
+import glam_one from "../app/images/glam1.png"
+import glam_two from "../app/images/glam2.png"
+import glam_three from "../app/images/glam3.png"
 
 const vollkorn = Vollkorn({ subsets: ["latin"]})
 const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800"]}, )
@@ -10,8 +18,54 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400
 import { useState } from 'react'
 import Link from 'next/link'
 
+
+const optionContainer = {
+    initial: {
+        y: "-50px",
+        scale: 0
+    },
+    animate: {
+        y: 0,
+        scale: 1,
+        transition: {
+            type: "spring", duration: 0.5
+        }
+    },
+    exit : {
+        y: "-50px",
+        scale: 0,
+        transition: {
+            type: "spring", duration: 0.5
+        }
+    }
+}
+
+
+const containerVariant = {
+    initial: {
+        opacity: 0
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: 0.4, delayChildren: 0.3, staggerChildren: 0.4, type: "spring"
+        }
+    }
+}
+
+const divChildVariant = {
+    initial: {
+        scale: 0
+    },
+    animate: {
+        scale: 1,
+    }
+}
+
 const Options = () => {
     const [glam, setGlam] = useState(false)
+    const ref = useRef(null);
+    const isInView = useInView(ref, {once: true})
     return (
         <>
             <Parallax
@@ -27,26 +81,32 @@ const Options = () => {
                 </div>
                 <AnimatePresence>
                     {glam ?
-                        <motion.section exit={{opacity: 0}} transition={{duration: 0.3}}>
-                            <motion.div exit={{opacity: 0}} transition={{duration: 0.3, staggerChildren: 0.3}} className="text-center my-10">
+                        <motion.section variants={optionContainer} initial="initial" animate={glam ? "animate" : "initial"} exit="exit">
+                            <motion.div className="text-center my-10">
                                 <h1 className={`${poppins.className} font-bold text-xl md:text-3xl my-2 md:my-4`}>Have an event coming up?</h1>
                                 <p className={`${vollkorn.className} md:w-[700px] text-base md:text-lg mx-auto`}>Whether it’s a special occasion or you just want to feel fabulous, we will help you create a flawless look that leaves you feeling glamorous and make you the star of the show. Secure your spot and get ready to slayyy</p>
-                                <Link href="/softglam">
+                                <Link href="/">
                                     <button className="my-3 px-3 md:px-5 py-3 bg-transparent text-black border-2 border-black">Book Apointment</button>
                                 </Link>
                             </motion.div>
                             <Parallax
                             >
-                                <section className="flex flex-wrap md:flex-row flex-col gap-10 items-center justify-between">
-                                    <div className="border-2 flex-1 w-full aspect-square bg-black"></div>
-                                    <div className="border-2 flex-1 w-full aspect-square bg-black"></div>
-                                    <div className="border-2 flex-1 w-full aspect-square bg-black"></div>
-                                </section>
+                                <motion.section ref={ref} variants={containerVariant} initial="initial" animate={isInView ? "animate" : "initial"} className="flex flex-wrap md:flex-row flex-col gap-10 items-center justify-between">
+                                    <motion.div variants={divChildVariant} className="flex-1 w-fit">
+                                        <Image src={glam_one} width={1000} height={1000} alt="glam-image-one" />
+                                    </motion.div>
+                                    <motion.div variants={divChildVariant} className="flex-1 w-fit">
+                                        <Image src={glam_two} width={1000} height={1000} alt="glam-image-two" />
+                                    </motion.div>
+                                    <motion.div variants={divChildVariant} className="flex-1 w-fit">
+                                        <Image src={glam_three} width={1000} height={1000} alt="glam-image-three" />
+                                    </motion.div>
+                                </motion.section>
                             </Parallax>
                         </motion.section>
                         :
-                        <motion.section exit={{opacity: 0}} transition={{duration: 0.3}}>
-                            <motion.div exit={{opacity: 0}} transition={{duration: 0.3, staggerChildren: 0.3}} className="text-center my-10">
+                        <motion.section variants={optionContainer} initial="animate" exit="exit">
+                            <motion.div className="text-center my-10">
                                 <h1 className={`${poppins.className} font-bold text-xl md:text-3xl my-2 md:my-4`}>Is your big day on the way?</h1>
                                 <p className={`${vollkorn.className} md:w-[700px] text-base md:text-lg mx-auto`}>Get ready to say ‘I DO’ in style with our exceptional bridal makeup services. At Evatouch beauty, we are equipped with all that it takes to make you look absolutely stunning and make you the most beautiful bride ever.</p>
                                 <Link href="/softglam">
@@ -55,11 +115,17 @@ const Options = () => {
                             </motion.div>
                             <Parallax
                             >
-                                <section className="flex flex-wrap md:flex-row flex-col gap-10 items-center justify-between">
-                                    <div className="border-2 flex-1 w-full aspect-square bg-black"></div>
-                                    <div className="border-2 flex-1 w-full aspect-square bg-black"></div>
-                                    <div className="border-2 flex-1 w-full aspect-square bg-black"></div>
-                                </section>
+                                <motion.section ref={ref} variants={containerVariant} initial="initial" animate={isInView ? "animate" : "initial"} className="flex flex-wrap md:flex-row flex-col gap-10 items-center justify-between">
+                                <motion.div variants={divChildVariant} className="flex-1 w-fit">
+                                    <Image src={wed_one} width={1000} height={1000} alt="wedding-image-one" />
+                                </motion.div>
+                                <motion.div variants={divChildVariant} className="flex-1 w-fit">
+                                    <Image src={wed_two} width={1000} height={1000} alt="wedding-image-two" />
+                                </motion.div>
+                                <motion.div variants={divChildVariant} className="flex-1 w-fit">
+                                    <Image src={wed_three} width={1000} height={1000} alt="wedding-image-three" />
+                                </motion.div>
+                                </motion.section>
                             </Parallax>
                         </motion.section>
                     }
