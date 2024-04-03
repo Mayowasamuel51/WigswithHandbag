@@ -12,7 +12,6 @@ import { usePathname } from "next/navigation";
 import LOGO from "../app/images/eva.png"
 import Image from "next/image";
 
-
 import { Button } from "@/components/ui/button"
 import {
     Drawer,
@@ -124,7 +123,7 @@ const Header = () => {
                     <motion.ul variants={ulVariant} className="font-bold md:font-semibold p-4 md:text-xl leading-10">
                         <motion.li onClick={() => openSubNav()} variants={liVariant}><span className="px-3 flex items-center gap-1">Shop<FaChevronDown /></span>
                             <ul className={`flex flex-col px-4 ${subNav ? "h-[84px]" : "h-0"} transition-all duration-300 overflow-hidden`}>
-                                <Link href="/wig">Wig</Link>
+                                <Link href="/wigs">Wig</Link>
                                 <Link href="/bundles">Bundle</Link>
                             </ul>
                         </motion.li>
