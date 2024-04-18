@@ -2,12 +2,23 @@ import React from 'react'
 import { FaXmark } from "react-icons/fa6";
 import Link from 'next/link';
 import Image from 'next/image';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { Toaster } from 'sonner';
+import { SignUpButton } from '@/contexts/authContext';
+import { useForm } from "react-hook-form"
+
 
 export const metadata = {
     title: "Create Account",
 };
 
 const page = () => {
+    // const {
+    //     register,
+    //     handleSubmit,
+    //     watch,
+    //     formState: { errors },
+    //   } = useForm()
     return (
         <>
             <section className="bg-black min-h-screen flex justify-center items-center">
@@ -38,8 +49,7 @@ const page = () => {
                                     type="password" id="" className="text-base pl-2 h-10 rounded-sm w-full border-2 border-black" />
                             </label>
                         </div>
-                        <button type="submit" className="w-full rounded-sm hover:text-BLUE border-2 border-black hover:bg-transparent hover:text-black bg-black duration-300 py-2 font-semibold text-white text-base md:text-">{false ?
-                            "Loading" : "Create Account"}</button>
+                        <SignUpButton />
                         <p className='text-center font-extralight py-1'>or</p>
                     </form>
                     <div className='login-options flex flex-col gap-3 font-medium'>

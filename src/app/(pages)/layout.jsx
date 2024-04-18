@@ -12,7 +12,7 @@ export default function PageLayout({ children }) {
 
     return (
         <>
-            <div className={`${poppins.className} md:px-20 px-4`}>
+            <div className={`${poppins.className}`}>
                 <Header />
                 <div className="md:py-32 py-20">
                     {children}

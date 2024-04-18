@@ -2,7 +2,6 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { Parallax } from 'react-scroll-parallax';
-
 import Image from 'next/image';
 import arrival_one from "../app/images/arr1.png"
 import arrival_two from "../app/images/arr2.png"
