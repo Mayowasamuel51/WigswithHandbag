@@ -11,7 +11,7 @@ div.landing-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: #9b700273;
+  background: #daa520a6;
   z-index: -1;
 }
 

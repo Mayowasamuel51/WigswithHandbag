@@ -73,7 +73,7 @@ const Options = () => {
                 translateY={['0px', '-80px']}
                 className='overflow-hidden'
             >
-                <div className="my-4 shadow-md p-3 md:p-6 w-fit mx-auto overflow-hidden bg-[#C5B281]">
+                <div className="my-4 shadow-md p-3 md:p-6 w-fit mx-auto overflow-hidden bg-[#daa520a6]">
                     <div className="flex justify-center items-center gap-3 md:gap-10">
                         <motion.button whileTap={{scale: 1.05}} onClick={() => setGlam(false)} className={`px-4 md:px-6 py-4 ${!glam && "bg-white text-black"} `}>Bridal MakeUp</motion.button>
                         <motion.button whileTap={{scale: 1.05}} onClick={() => setGlam(true)} className={`px-4 md:px-6 py-4 text-black ${glam && "bg-white text-black"}`}>Soft Glam</motion.button>
