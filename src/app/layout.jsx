@@ -1,5 +1,7 @@
-import { Vollkorn } from "next/font/google";
+import { Vollkorn, <Poppins></Poppins> } from "next/font/google";
 const vollkorn = Vollkorn({ subsets: ["latin"] })
+const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800"]}, )
+
 import { Providers } from "./providers";
 
 export const metadata = {
@@ -17,7 +19,7 @@ export default function Layout({ children }) {
       <head>
       <link rel="icon" href="icon.jpeg" type="jpeg" sizes="any" />
       </head>
-      <body className={vollkorn.className}>
+      <body className={poppins.className}>
         <div className="">
           <section>
             <Providers>
