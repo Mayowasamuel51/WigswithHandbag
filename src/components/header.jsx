@@ -115,7 +115,7 @@ const Header = () => {
                         </DrawerFooter>
                     </DrawerContent>
                 </Drawer>
-                <FaUser onClick={} size={20} />
+                <FaUser size={20} />
                 {user && <button onClick={logOut} className="w-full rounded-sm border-2 border-black hover:bg-transparent hover:text-black duration-300 bg-black py-2 font-semibold text-white text-base md:text-base">LOGOUT</button>}
             </div>
             <motion.div className={`${nav ? "static" : "relative"} cursor-pointer bg-black p-2 rounded-md lg:hidden block`}>
