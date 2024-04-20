@@ -33,18 +33,22 @@ export const AuthProvider = ({children}) => {
             signOut(auth)
             setUser(null)
             setUserToken(null)
-            localStorage.removeItem("token", JSON.stringify(response?.user.accessToken))
-            localStorage.removeItem("user", JSON.stringify(response?.user))
-            toast.success("Logged Out Successfully")
-            setLoading(false)
-            router.push("/login")
+            localStorage.removeItem("token")
+            localStorage.removeItem("user")
+            toast.success("Logged Out Successfully", {
+                position: "top-right"
+            })
+            setTimeout(() => {
+                setLoading(false)
+                router.push("/login")
+            }, 2000);
         } catch (error) {
             console.log(error)
         }
         
     }
     return (
-        <AuthContext.Provider value={{loading, setLoading, setUser, userToken, setUserToken, googlePopUp, logOut}}>
+        <AuthContext.Provider value={{loading, setLoading, user, setUser, userToken, setUserToken, googlePopUp, logOut}}>
             <Toaster position="top-center" />
             <div className="relative">
                 <>

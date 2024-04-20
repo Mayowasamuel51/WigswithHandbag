@@ -12,6 +12,7 @@ import { usePathname } from "next/navigation";
 import LOGO from "../app/images/eva.png"
 import Image from "next/image";
 import { AuthContext } from "@/contexts/authContext";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button"
 import {
@@ -77,8 +78,14 @@ const Header = () => {
     const openSubNav2 = () => {
         setSubNav2(prev => !prev)
     }
+    const profile = ()=> {
+        if (user) return;
+        else {
+
+        }
+    }
     return (
-        <header className="lg:px-20 px-4 bg-white fixed w-full left-0 top-0 flex items-center justify-between z-[999999999]">
+        <header className="lg:px-20 px-4 bg-white fixed w-full left-0 top-0 flex items-center justify-between z-[9999]">
             <div className="lg:block hidden"><Link href="/"><Image src={LOGO} width={80} height={80} alt="LOGO" /></Link></div>
             <div className="lg:hidden block"><Link href="/"><Image src={LOGO} width={40} height={40} alt="LOGO" /></Link></div>
             <nav className="lg:block hidden">
@@ -108,8 +115,8 @@ const Header = () => {
                         </DrawerFooter>
                     </DrawerContent>
                 </Drawer>
-                <FaUser size={20} />
-                {user &&  <button onClick={logOut} className="w-full rounded-sm hover:text-BLUE border-2 border-black hover:bg-transparent hover:text-black duration-300 bg-black py-2 font-semibold text-white text-base md:text-xl">LOGOUT</button>}
+                <FaUser onClick={} size={20} />
+                {user && <button onClick={logOut} className="w-full rounded-sm border-2 border-black hover:bg-transparent hover:text-black duration-300 bg-black py-2 font-semibold text-white text-base md:text-base">LOGOUT</button>}
             </div>
             <motion.div className={`${nav ? "static" : "relative"} cursor-pointer bg-black p-2 rounded-md lg:hidden block`}>
                 {nav ?

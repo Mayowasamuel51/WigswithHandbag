@@ -15,7 +15,7 @@ import { useRouter } from 'next/navigation';
 
 const Page = () => {
     const router = useRouter()
-    const { loading, setLoading, setUser, userToken, setUserToken } = useContext(AuthContext)
+    const { loading, setLoading, setUser, userToken, setUserToken, googlePopUp } = useContext(AuthContext)
     const schema = yup.object().shape({
         email: yup.string().email("Invalid email address").required("Email is required"),
         password: yup.string().required("Password is required"),
@@ -77,7 +77,7 @@ const Page = () => {
                         <p className='text-center font-extralight py-1'>or</p>
                     </form>
                     <div className='login-options flex flex-col gap-3 font-medium'>
-                        <button className='flex items-center justify-center gap-2 border-[1px] border-black rounded-3xl py-2 hover:bg-black hover:text-white duration-300'>Continue with Google</button>
+                        <button onClick={googlePopUp} className='flex items-center justify-center gap-2 border-[1px] border-black rounded-3xl py-2 hover:bg-black hover:text-white duration-300'>Continue with Google</button>
                     </div>
                     <p className="text-sm md:text-base mt-4 font-semibold ">Don&apos;t have an account? <Link className="underline underline-offset-2 text-BLUE" href="/createAccount">Create Account</Link></p>
                 </div>

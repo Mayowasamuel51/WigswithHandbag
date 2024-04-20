@@ -49,9 +49,9 @@ const Links = () => {
                     {selected && <Content dir={dir} selected={selected} />}
                 </AnimatePresence>
             </div>
-            <Link className={`${pathname === "/gallery" && "nav-others"} nav-active px-3 py-1.5`} href="/gallery">Gallery</Link>
-            <Link className={`${pathname === "/about" && "nav-others"} nav-active px-3 py-1.5`} href="/about">About Us</Link>
-            <Link className={`${pathname === "/contact" && "nav-others"} nav-active px-3 py-1.5`} href="/contact">Contact Us</Link>
+            <Link className={`${pathname === "/gallery" && "nav-others"} nav-active px-2 py-1.5`} href="/gallery">Gallery</Link>
+            <Link className={`${pathname === "/about" && "nav-others"} nav-active px-2 py-1.5`} href="/about">About Us</Link>
+            <Link className={`${pathname === "/contact" && "nav-others"} nav-active px-2 py-1.5`} href="/contact">Contact Us</Link>
         </ul>
     )
 }
