@@ -11,7 +11,7 @@ import best_three from "../app/images/best3.png"
 import best_four from "../app/images/best4.png"
 
 const vollkorn = Vollkorn({ subsets: ["latin"]})
-const poppins = Poppins({ subsets: ["latin"], weight: ["100", "300", "300", "300", "500", "600", "300", "800"]}, )
+const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800"]}, )
 
 import Image from 'next/image'
 
@@ -30,11 +30,11 @@ const Landing = () => {
   return (
     <>
       <div className="landing-bg border-2 ">
-        <div className="min-h-screen -z-[3] md:grid place-items-center hidden absolute w-full">
+        <div className="min-h-screen -z-[3] grid place-items-center absolute w-full">
           <div className="flex gap-8">
-            <Image src={landing1} width={300} height={300} alt="landing-img" className="flex-1 object-cover" />
-            <Image src={landing2} width={300} height={300} alt="landing-img" className="flex-1 object-cover" />
-            <Image src={landing3} width={300} height={300} alt="landing-img" className="flex-1 object-cover" />
+            <Image src={landing1} width={250} height={250} alt="landing-img" style={{width:"auto"}} className="flex-1 object-cover lg:block hidden" />
+            <Image src={landing2} width={250} height={250} alt="landing-img"style={{width:"auto"}} className="flex-1 object-cover" />
+            <Image src={landing3} width={250} height={250} alt="landing-img" className="flex-1 object-cover lg:block hidden" />
           </div>
         </div>
         <section className="flex items-center md:flex-row flex-col justify-center gap-16 min-h-screen py-32 md:py-10 md:my-10">

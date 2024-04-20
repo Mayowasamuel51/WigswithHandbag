@@ -9,12 +9,11 @@ import Footer from "@/components/footer";
 
 
 export default function PageLayout({ children }) {
-
     return (
         <>
             <div className={`${poppins.className}`}>
                 <Header />
-                <div className="md:py-32 py-20">
+                <div className="md:py-32 py-20 lg:px-20 px-4">
                     {children}
                 </div>
             </div>

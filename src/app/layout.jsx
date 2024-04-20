@@ -3,6 +3,7 @@ const vollkorn = Vollkorn({ subsets: ["latin"] })
 const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800"]}, )
 
 import { Providers } from "./providers";
+import { AuthProvider } from "@/contexts/authContext";
 
 export const metadata = {
   title: "EvaTouch",
@@ -12,19 +13,20 @@ export const metadata = {
 };
 
 
-
 export default function Layout({ children }) {
   return (
     <html lang="en">
       <head>
       <link rel="icon" href="icon.jpeg" type="jpeg" sizes="any" />
       </head>
-      <body className={poppins.className}>
+      <body className={vollkorn.className}>
         <div className="">
           <section>
-            <Providers>
-              {children}
-            </Providers>
+            <AuthProvider>
+              <Providers>
+                {children}
+              </Providers>
+            </AuthProvider>
           </section>
         </div>
       </body>

@@ -1,32 +1,57 @@
 "use client"
-import { createContext } from "react";
-import { Toaster } from 'sonner';
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { useState, createContext } from "react";
+import { Toaster, toast } from 'sonner';
+import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import { auth } from '@/firebase.config';
+// import { useRouter } from 'next/navigation';
+import AuthLoader from "@/components/authLoader";
 
-
-const AuthContext = createContext({})
-
+export const AuthContext = createContext({})
 export const AuthProvider = ({children}) => {
-
-    return (
-        <AuthContext.Provider >
-            <Toaster />
-            {children}
-        </AuthContext.Provider>
-    )
-}
-
-export const SignUpButton = ()=> {
-    const createAccount = ()=> {
-        // signInWithEmailAndPassword(auth, email, actionCodeSettings).then(()=> {
-        //     console.log(auth)
-        // }).catch((error) => {
-        //     const errorCode = error.code;
-        //     const errorMessage = error.message;
-        //});
-        alert('created')
+    // const router = useRouter()
+    const [user, setUser] = useState(()=> localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null)
+    const [userToken, setUserToken] = useState(()=> localStorage.getItem("token") ? JSON.parse(localStorage.getItem("token")) : null)
+    const [loading, setLoading] = useState(false)
+    const googlePopUp = async()=> {
+        const provider = new GoogleAuthProvider()
+        try {
+            await signInWithPopup(auth, provider).then((response)=> {
+                setUser(response?.user)
+                setUserToken(response?.user.accessToken)
+                localStorage.setItem("token", JSON.stringify(response?.user.accessToken))
+                localStorage.setItem("user", JSON.stringify(response?.user))
+                toast.success("Welcome to EvaTouch Beauty!")
+                router.push("/")
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    const logOut = ()=> {
+        setLoading(true)
+        try {
+            signOut(auth)
+            setUser(null)
+            setUserToken(null)
+            localStorage.removeItem("token", JSON.stringify(response?.user.accessToken))
+            localStorage.removeItem("user", JSON.stringify(response?.user))
+            toast.success("Logged Out Successfully")
+            setLoading(false)
+            router.push("/login")
+        } catch (error) {
+            console.log(error)
+        }
+        
     }
     return (
-        <button onClick={createAccount} type="submit" className="w-full rounded-sm hover:text-BLUE border-2 border-black hover:bg-transparent hover:text-black bg-black duration-300 py-2 font-semibold text-white text-base md:text-">{false ?"Loading" : "Create Account"}</button>
+        <AuthContext.Provider value={{loading, setLoading, setUser, userToken, setUserToken, googlePopUp, logOut}}>
+            <Toaster position="top-center" />
+            <div className="relative">
+                <>
+                    {children}
+                </>
+                {loading && <AuthLoader />}
+            </div>
+        </AuthContext.Provider>
     )
 }
