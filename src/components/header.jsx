@@ -13,6 +13,7 @@ import LOGO from "../app/images/eva.png"
 import Image from "next/image";
 import { AuthContext } from "@/contexts/authContext";
 import { useRouter } from "next/navigation";
+import { toast } from 'sonner';
 
 import { Button } from "@/components/ui/button"
 import {
@@ -72,6 +73,7 @@ const Header = () => {
     const [subNav, setSubNav] = useState(false)
     const [subNav2, setSubNav2] = useState(false)
     const {user, logOut} = useContext(AuthContext)
+    const router = useRouter()
     const openSubNav = () => {
         setSubNav(prev => !prev)
     }
@@ -81,7 +83,13 @@ const Header = () => {
     const profile = ()=> {
         if (user) return;
         else {
-
+            toast.error(`You are not logged in Now
+            But you be redirected to the Login Page`, {
+                position: "top-center"
+            })
+            setTimeout(() => {
+                router.push("/login")
+            }, 2000);
         }
     }
     return (
@@ -115,7 +123,7 @@ const Header = () => {
                         </DrawerFooter>
                     </DrawerContent>
                 </Drawer>
-                <FaUser size={20} />
+                <FaUser onClick={profile} size={20} />
                 {user && <button onClick={logOut} className="w-full rounded-sm border-2 border-black hover:bg-transparent hover:text-black duration-300 bg-black py-2 font-semibold text-white text-base md:text-base">LOGOUT</button>}
             </div>
             <motion.div className={`${nav ? "static" : "relative"} cursor-pointer bg-black p-2 rounded-md lg:hidden block`}>
@@ -155,4 +163,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header;

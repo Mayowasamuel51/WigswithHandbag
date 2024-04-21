@@ -14,7 +14,6 @@ import { useRouter } from 'next/navigation';
 
 const Page = () => {
     const router = useRouter()
-
     const { loading, setLoading, googlePopUp } = useContext(AuthContext);
 
     const schema = yup.object().shape({
@@ -34,7 +33,7 @@ const Page = () => {
             router.push("/login")
         }).catch((error) => {
             setLoading(false)
-            toast("Something went wrong somewhere")
+            toast.error("Something went wrong somewhere")
             const errorCode = error.code;
             const errorMessage = error.message;
         });

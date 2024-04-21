@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import { useState, createContext } from "react";
 import { Toaster, toast } from 'sonner';
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { auth } from '@/firebase.config';
-// import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import AuthLoader from "@/components/authLoader";
 
 export const AuthContext = createContext({})
@@ -30,11 +30,11 @@ export const AuthProvider = ({children}) => {
     const logOut = ()=> {
         setLoading(true)
         try {
-            signOut(auth)
             setUser(null)
             setUserToken(null)
             localStorage.removeItem("token")
             localStorage.removeItem("user")
+            signOut(auth)
             toast.success("Logged Out Successfully", {
                 position: "top-right"
             })
