@@ -26,10 +26,39 @@ export const AuthProvider = ({ children }) => {
 
   const googlePopUp = async () => {
     // ... rest of your code (Google sign-in logic)
+    const provider = new GoogleAuthProvider()
+    try {
+        await signInWithPopup(auth, provider).then((response)=> {
+            setUser(response?.user)
+            setUserToken(response?.user.accessToken)
+            localStorage.setItem("token", JSON.stringify(response?.user.accessToken))
+            localStorage.setItem("user", JSON.stringify(response?.user))
+            toast.success("Welcome to EvaTouch Beauty!")
+            router.push("/")
+        })
+    } catch (error) {
+        console.log(error.message)
+    }
   };
 
   const logOut = () => {
-    // ... rest of your code (logout logic)
+    // ... rest of your code (logout logic)'  setLoading(true)
+        try {
+            setUser(null)
+            setUserToken(null)
+            localStorage.removeItem("token")
+            localStorage.removeItem("user")
+            signOut(auth)
+            toast.success("Logged Out Successfully", {
+                position: "top-right"
+            })
+            setTimeout(() => {
+                setLoading(false)
+                router.push("/login")
+            }, 2000);
+        } catch (error) {
+            console.log(error)
+        }
   };
 
   return (
