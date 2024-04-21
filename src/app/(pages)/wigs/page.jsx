@@ -8,7 +8,7 @@ import wig_six from "../../images/wig6.png"
 import Image from 'next/image'
 
 
-const page = () => {
+const Page = () => {
   return (
     <div className="">
       <h1 className="my-4 text-center font-bold text-xl md:text-3xl">Wigs</h1>
@@ -60,4 +60,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

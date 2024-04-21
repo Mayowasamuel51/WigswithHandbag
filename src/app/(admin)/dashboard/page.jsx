@@ -1,8 +1,8 @@
-
-const page = () => {
+"use client"
+const Page = () => {
   return (
     <div>DASHBOARD FOR NOW</div>
   )
 }
 
-export default page
+export default Page

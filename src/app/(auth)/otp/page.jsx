@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 import OtpInputControl from '@/components/otpInput';
 
-const page = () => {
+const Page = () => {
 
     return (
         <section className="min-h-screen flex justify-center items-center bg-black">
@@ -25,4 +25,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

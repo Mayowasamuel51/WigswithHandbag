@@ -33,6 +33,7 @@ const Page = () => {
         setLoading(true)
         signInWithEmailAndPassword(auth, data.email, data.password).then((response)=> {
             setUser(response?.user)
+        
             setUserToken(response?.user.accessToken)
             localStorage.setItem("token", JSON.stringify(response?.user.accessToken))
             localStorage.setItem("user", JSON.stringify(response?.user))

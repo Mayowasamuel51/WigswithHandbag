@@ -1,8 +1,9 @@
+"use client"
 import React from 'react'
 import Link from 'next/link'
 import { FaXmark } from "react-icons/fa6";
 
-const page = () => {
+const Page = () => {
     return (
         <>
             <section className="bg-black min-h-screen flex justify-center items-center">
@@ -44,4 +45,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

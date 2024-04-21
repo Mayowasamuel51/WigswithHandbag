@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { FaChevronLeft } from "react-icons/fa6";
 
-const page = () => {
+const Page = () => {
     return (
         <section className="min-h-screen flex justify-center items-center bg-black">
             <div className="border-2 border-black md:w-[400px] p-5 bg-white rounded-sm">
@@ -33,4 +33,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
